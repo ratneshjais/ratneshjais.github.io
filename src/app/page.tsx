@@ -66,7 +66,7 @@ export default function Home() {
         <section className="border-t border-line py-16">
           <SectionTitle id="work">Selected work</SectionTitle>
           <p className="mt-3 max-w-2xl text-sm text-ink-muted">
-            Client and product names are left out on purpose. Happy to go deeper in conversation.
+            Client work is described without client or product names, on purpose. Happy to go deeper in conversation.
           </p>
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             {caseStudies.map((c) => (
@@ -81,6 +81,14 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+                {c.link && (
+                  <a
+                    href={c.link.href}
+                    className="mt-4 text-sm font-medium text-accent underline-offset-4 hover:underline"
+                  >
+                    {c.link.label} →
+                  </a>
+                )}
                 <ul className="mt-auto flex flex-wrap gap-1.5 pt-5" aria-label="Stack">
                   {c.stack.map((t) => (
                     <li key={t} className="rounded-full bg-accent-soft px-2.5 py-1 font-mono text-[11px] text-accent">

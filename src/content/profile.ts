@@ -29,9 +29,23 @@ export type CaseStudy = {
   summary: string;
   points: string[];
   stack: string[];
+  /** Public link, for open-source work only. */
+  link?: { href: string; label: string };
 };
 
 export const caseStudies: CaseStudy[] = [
+  {
+    title: "skill-tracker: Claude Code plugin (open source)",
+    summary:
+      "A plugin that keeps a private record of the skills you use at work and turns it into resume bullets, without leaking anything about your employer.",
+    points: [
+      "A session hook records languages, tools, tech stack and kind of work, using only an allowlist of public technology names.",
+      "Notes pass through a redaction layer that strips URLs, emails, domains, paths, tokens and the project's own names.",
+      "Local-only storage, review commands that build resume bullets, and tests that prove no client detail reaches the log.",
+    ],
+    stack: ["Claude Code plugins", "Node.js", "Hooks", "Privacy by design", "node:test"],
+    link: { href: "https://github.com/ratneshjais/claude-plugins", label: "View on GitHub" },
+  },
   {
     title: "Full-stack Next.js and Payload CMS application",
     summary:
